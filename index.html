@@ -481,8 +481,54 @@
             </section>
         </div>
 
+        <!-- Microdata //-->
+        <div itemscope itemtype="http://schema.org/Brewery" style="display: none;">
+           <span itemprop="name">Cervejaria TRIA</span>
+           <span itemprop="description">A TRIA é uma cervejaria artesanal autenticamente paulistana, situada no bairro de Moema, São Paulo, em um espaço dedicado dentro do bar e restaurante Mundo Cervejeiro.
+           Comandada pelo Mestre Cervejeiro Frank Skwirut, a TRIA resgata a arte no artesanal, através do perfeccionismo na técnica e da riqueza dos ingredientes selecionados.</span>
+
+           <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+             <span itemprop="streetAddress">Av. Miruna, 51-A</span>
+             <span itemprop="addressLocality">São Paulo</span>,
+             <span itemprop="addressRegion">São Paulo</span>
+             <span itemprop="postalCode">04084-000</span>
+           </div>
+
+           <span itemprop="telephone">(11) 5041-1180</span>
+           <span itemprop="email">contato@cervejariatria.com.br</span>
+
+           <a href="https://www.google.com.br/maps/place/Av.+Miruna,+51+-+Indian%C3%B3polis,+S%C3%A3o+Paulo+-+SP/@-23.6113202,-46.6657037,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5a095528b5cf:0x6ef80c2a0345f5bd" itemprop="maps">URL of Map</a> 
+
+           <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+             <span itemprop="ratingValue">5</span> 
+             <span itemprop="reviewCount">155</span>
+           </div>
+
+           <span itemprop="servesCuisine">Brasileira</span>
+           <span itemprop="priceRange">$$</span>
+           <span itemprop="acceptsReservations">True</span>
+
+           <time itemprop="openingHours" datetime="Tu-Th 17:00-23:00"></time>
+           <time itemprop="openingHours" datetime="Fr 17:00-01:00"></time>
+           <time itemprop="openingHours" datetime="Sa 12:00-01:00"></time>
+           <time itemprop="openingHours" datetime="Su 12:00-20:00"></time>
+
+
+        </div>
+
+
         <script src="js/appmin.js"></script>
 
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41302257-2', 'auto');
+          ga('send', 'pageview');
+
+        </script>
 
 
     </body>
