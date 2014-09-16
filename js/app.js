@@ -155,7 +155,7 @@ function resize_bg() {
         }
     });
 
-    $( '#brewery' ).css( 'height' , doc_height / 3 );
+    $( '#brewery' ).css( 'height' , doc_height / 2 );
 
     $( '#locator' ).css( 'margin-top' , ($( '#locator').height() /2   ) *-1   );
 
