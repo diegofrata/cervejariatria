@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "18027",
+"creatorBuild": "18270",
 "files": {
 	"\/css\/img\/bg\/beer.png": {
 		"fileType": 32768,
@@ -365,18 +365,29 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/css\/import.css": {
-		"fileType": 16,
+	"\/css\/import.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/import.css",
-		"outputAbbreviatedPath": "No Output Path",
+		"inputAbbreviatedPath": "\/css\/import.less",
+		"outputAbbreviatedPath": "\/css\/import.min.css",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 2,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
 		},
 	"\/css\/import.min.css": {
 		"fileType": 16,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/css\/import.min.css",
 		"outputAbbreviatedPath": "No Output Path",
@@ -842,6 +853,10 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"singleGroups": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"strict": {
 			"active": 0,
 			"flagValue": -1
@@ -997,11 +1012,11 @@
 	"kitAutoOutputPathStyle": 0,
 	"lessAllowInsecureImports": 0,
 	"lessAutoOutputPathEnabled": 1,
-	"lessAutoOutputPathFilenamePattern": "*.css",
+	"lessAutoOutputPathFilenamePattern": "*.min.css",
 	"lessAutoOutputPathRelativePath": "..\/css",
 	"lessAutoOutputPathReplace1": "less",
 	"lessAutoOutputPathReplace2": "css",
-	"lessAutoOutputPathStyle": 2,
+	"lessAutoOutputPathStyle": 0,
 	"lessCreateSourceMap": 0,
 	"lessDisableJavascript": 0,
 	"lessIeCompatibility": 1,
