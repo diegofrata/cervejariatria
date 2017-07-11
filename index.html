@@ -35,9 +35,9 @@
             $('body').css({'height': doc_height});
 
 
-
             $(document).on('click', '#showsite', function() {
                if($('#page').css('display', 'none')) {
+                   navAction();
                    $('#page').fadeIn(1, function() {
                        resize_bg();
                        initialize();

@@ -97,7 +97,6 @@ $( document ).ready(function() {
     scrollTo();
     resize_bg();
     carouselSwipe();
-    navAction();
 
     $(window).on('resize', function () {
         resize_bg();
