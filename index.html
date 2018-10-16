@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBVtbYfbHAbVyJVOZF71lWD6mwxZiHJ2sQ&sensor=true"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCoEjY-VLJ8E2ItocKaHQWa_Ue7I0fngiI&sensor=true"></script>
         <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -102,9 +102,8 @@
                             <li><a href="#overview">Sazonais</a></li>
                             <li><a href="#process">O Processo </a></li>
                             <li><a href="#about">A Cervejaria</a></li>
-                            <li><a href="#location">Onde Encontrar</a></li>
+                            <li><a href="#location">Onde Beber</a></li>
                             <li><a href="#socialwall">TRIA Social</a></li>
-                            <li><a href="http://loja.cervejariatria.com.br" style="color: #f9ac28; text-decoration: underline;">Compre Online!</a></li>
                         </ul>
                     </div>
                     <ul id="social-media">
@@ -144,10 +143,6 @@
                                             <div class="clearfix"></div>
                                         </div>
 
-                                        <h4 class="shopnow">
-                                            R$ 21,80
-                                            <a href="https://loja.cervejariatria.com.br/carrinho/produto/19498124/adicionar">COMPRAR</a>
-                                        </h4>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -170,11 +165,6 @@
                                             <div class="info-ibu">Ibu<br/><span>20</span></div>
                                             <div class="clearfix"></div>
                                         </div>
-                                        
-                                        <h4 class="shopnow">
-                                            R$ 15,80
-                                            <a href="https://loja.cervejariatria.com.br/carrinho/produto/19503520/adicionar">COMPRAR</a>
-                                        </h4>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -199,11 +189,6 @@
                                             <div class="info-ibu">Ibu<br/><span>20</span></div>
                                             <div class="clearfix"></div>
                                         </div>
-
-                                        <h4 class="shopnow">
-                                            R$ 18,90
-                                            <a href="https://loja.cervejariatria.com.br/carrinho/produto/19503464/adicionar">COMPRAR</a>
-                                        </h4>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -448,7 +433,7 @@
             <!------------BREWERY-PARALLAX------------>
             <section id="brewery"></section>
             <!------------LOCATION------------>
-            <section id="location" class="full" style="display:none;">
+            <section id="location" class="full">
                 <div id="google-map"></div>
                 <div class="content-area">
                     <div class="container">
@@ -457,20 +442,25 @@
                 </div>
                 <img id="locator-icon" src="css/img/icons/locator.png" alt="Locator">
                 <div id="locator">
-                    <img src="css/img/icons/logo_mundo.png" alt="Mundo Cervejeiro - Bar & Restaurante"/>
+                    <img src="css/img/icons/logo.svg" alt="Cervejaria TRIA">
                     <p> Av. Miruna, 51 <br/>
                         São Paulo, SP<br/>
                         CEP: 04084-000<br/>
-                        (11) 5041-1180<br/>
-                        <div class="visible-xs">
+                        <!-- (11) 2594-3156 <br/>-->
+                        (11) 99512-0441<br/>
+                        <span class="visible-xs">
                             <br/>
-                            <a href="http://www.mundocervejeiro.com.br" target="_blank">Website</a> | 
-                            <a href="mailto:contato@mundocervejeiro.com.br">Email</a>
-                        </div>
-                        <div class="hidden-xs">
-                            <a href="http://www.mundocervejeiro.com.br" target="_blank">www.mundocervejeiro.com.br</a><br/>
-                            <a href="mailto:contato@mundocervejeiro.com.br">contato@mundocervejeiro.com.br</a>
-                        </div>
+                            <a href="mailto:contato@cervejariatria.com.br">Email</a><br/>
+                        </span>
+                        <span class="hidden-xs">
+                            <a href="mailto:contato@cervejariatria.com.br">contato@cervejariatria.com.br</a><br/>
+                        </span>
+
+                        <br/>
+                        Quinta 17h – 23h<br/>
+                        Sexta 17h – 1h<br/>
+                        Sábado 12h – 1h<br/>
+                        Domingo 12h – 18h<br/>
                     </p>
                     <div id="arrow"></div>
                 </div>
@@ -493,33 +483,6 @@
 
             </section>
         </div>
-
-        <!-- Microdata //-->
-        <div itemscope itemtype="http://schema.org/Brewery" style="position: absolute; width: 1px; height: 1px; overflow: hidden;">
-           <span itemprop="name">Cervejaria TRIA</span>
-           <span itemprop="description">A TRIA é uma cervejaria artesanal autenticamente paulistana, situada no bairro de Moema, São Paulo.</span>
-
-           <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-             <span itemprop="streetAddress">Av. Miruna, 51-A</span>
-             <span itemprop="addressLocality">São Paulo</span>,
-             <span itemprop="addressRegion">São Paulo</span>
-             <span itemprop="postalCode">04084-000</span>
-           </div>
-
-           <span itemprop="telephone">(11) 5041-1180</span>
-           <span itemprop="email">contato@cervejariatria.com.br</span>
-
-           <a href="https://www.google.com.br/maps/place/Av.+Miruna,+51+-+Indian%C3%B3polis,+S%C3%A3o+Paulo+-+SP/@-23.6113202,-46.6657037,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5a095528b5cf:0x6ef80c2a0345f5bd" itemprop="maps">URL of Map</a> 
-
-           <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-             <span itemprop="ratingValue">4.5</span> 
-             <span itemprop="ratingCount">95</span>
-           </div>
-
-
-
-        </div>
-
 
         <script src="js/appmin.js"></script>
 

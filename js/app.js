@@ -156,7 +156,7 @@ function resize_bg() {
 
     $( '#brewery' ).css( 'height' , doc_height / 2 );
 
-    $( '#locator' ).css( 'margin-top' , ($( '#locator').height() /2   ) *-1   );
+    // $( '#locator' ).css( 'margin-top' , ($( '#locator').height() / 5   ) *-1   );
 
 
 }
