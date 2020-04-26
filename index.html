@@ -2,502 +2,566 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Cervejaria TRIA | Explore, Descubra, Aprecie</title>
-        <meta name="description" content="A TRIA é uma cervejaria artesanal autenticamente paulistana, situada no bairro
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cervejaria TRIA | Explore, Descubra, Aprecie</title>
+    <meta name="description" content="A TRIA é uma cervejaria artesanal autenticamente paulistana, situada no bairro
         de Moema, São Paulo, em um espaço dedicado dentro do bar e restaurante Mundo Cervejeiro.">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDtObolZwcjd1zyK70vx7RWHSnWSocTmt8&sensor=true"></script>
-        <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/import.min.css">
-        <link rel="icon" href="favicon.png">
-    </head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDtObolZwcjd1zyK70vx7RWHSnWSocTmt8&sensor=true"></script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700,700italic' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" href="css/import.min.css">
+    <link rel="icon" href="favicon.png">
+</head>
 
-    <script type="text/javascript">
-
-        $( window ).load(function() {
-            var doc_height = window.innerHeight ? window.innerHeight : $(window).height();
-            $('#status').delay(2500).fadeOut('slow');
-            $('#preloader').delay(2500).fadeOut('slow');
-            $( 'nav').css( 'display', 'none');
-            setTimeout( function(){
-                $('#age-confirm').css({'visibility': 'visible'});
-            },2000);
-
-
-            $('body').css({'height': doc_height});
-
-
-            $(document).on('click', '#showsite', function() {
-               if($('#page').css('display', 'none')) {
-                   navAction();
-                   $('#page').fadeIn(1, function() {
-                       resize_bg();
-                       initialize();
-
-                       var $nav = $('.navbar');
-                       $('html, body').animate({
-                           scrollTop:$('#page').offset().top - $nav.height() + 1
-                       },1400);
-
-                   });
-               } else {
-                   var $nav = $('.navbar');
-                   $('html, body').animate({
-                       scrollTop:$('#page').offset().top - $nav.height() + 1
-                   },1400);
-               }
-
+<script type="text/javascript">
+    $(window).load(function () {
+        var doc_height = window.innerHeight ? window.innerHeight : $(window).height();
+        $('#status').delay(2500).fadeOut('slow');
+        $('#preloader').delay(2500).fadeOut('slow');
+        $('nav').css('display', 'none');
+        setTimeout(function () {
+            $('#age-confirm').css({
+                'visibility': 'visible'
             });
+        }, 2000);
+
+
+        $('body').css({
+            'height': doc_height
+        });
+
+
+        $(document).on('click', '#showsite', function () {
+            if ($('#page').css('display', 'none')) {
+                navAction();
+                $('#page').fadeIn(1, function () {
+                    resize_bg();
+                    initialize();
+
+                    var $nav = $('.navbar');
+                    $('html, body').animate({
+                        scrollTop: $('#page').offset().top - $nav.height() + 1
+                    }, 1400);
+
+                });
+            } else {
+                var $nav = $('.navbar');
+                $('html, body').animate({
+                    scrollTop: $('#page').offset().top - $nav.height() + 1
+                }, 1400);
+            }
 
         });
 
-    </script>
+    });
+</script>
 
-    <body>
-        <!----PRELOADER----->
-        <div id="preloader" class="full">
-            <div id="status"></div>
-        </div>
-        <!------------START------------>
-        <section id="start" class="full">
-            <div id="age-confirm" class="full">
-                <div id="beer-area">
-                    <img class="hidden-xs" src="css/img/bg/beer.png" alt="">
-                    <img class="visible-xs" id="wood" src="css/img/bg/mobile/wood.jpg" alt="">
-                    <img class="visible-xs" id="beer" src="css/img/bg/mobile/beer.png" alt="">
-                    <img class="visible-xs" id="coaster" src="css/img/bg/mobile/coaster.png" alt="">
-                    <div id="confirm-area">
-                       <p><img class="eighteen" src="css/img/18anos.svg" /></p>
-                        <a onclick="javascript:void(0)" id="showsite"><img class="sim" src="css/img/sim.svg" /></a>
-                        <a href="#" id="tooyoung"><img class="nao" src="css/img/nao.svg" /></a>
-                        <div class="clearfix"></div>
-                    </div>
+<body>
+    <!----PRELOADER----->
+    <div id="preloader" class="full">
+        <div id="status"></div>
+    </div>
+    <!------------START------------>
+    <section id="start" class="full">
+        <div id="age-confirm" class="full">
+            <div id="beer-area">
+                <img class="hidden-xs" src="css/img/bg/beer.png" alt="">
+                <img class="visible-xs" id="wood" src="css/img/bg/mobile/wood.jpg" alt="">
+                <img class="visible-xs" id="beer" src="css/img/bg/mobile/beer.png" alt="">
+                <img class="visible-xs" id="coaster" src="css/img/bg/mobile/coaster.png" alt="">
+                <div id="confirm-area">
+                    <p><img class="eighteen" src="css/img/18anos.svg" /></p>
+                    <a onclick="javascript:void(0)" id="showsite"><img class="sim" src="css/img/sim.svg" /></a>
+                    <a href="#" id="tooyoung"><img class="nao" src="css/img/nao.svg" /></a>
+                    <div class="clearfix"></div>
                 </div>
             </div>
-        </section>
-        <div style="display:none;" id="page">
-            <!------------NAVIGATION------------>
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#slider-area"><img src="css/img/icons/logo.svg" alt="Logo TRIA"></a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="main-nav">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#slider-area">As Cervejas</a></li>
-                            <li><a href="#overview">Sazonais</a></li>
-                            <li><a href="#process">O Processo </a></li>
-                            <li><a href="#about">A Cervejaria</a></li>
-                            <li><a href="#location">Onde Beber</a></li>
-                            <li><a href="#socialwall">TRIA Social</a></li>
-                        </ul>
-                    </div>
-                    <ul id="social-media">
-                        <li><a href="http://instagram.com/cervejariatria" target="_blank"><img src="css/img/icons/instagram.svg" alt="Instragram"/></a></li>
-                        <li><a href="https://www.facebook.com/cervejariatria"><img src="css/img/icons/facebook.svg" alt="Facebook"/></a></li>
-                        <li><a href="http://twitter.com/cervejariatria/" target="_blank"><img src="css/img/icons/twitter.svg" alt="Twitter"/></a></li>
+        </div>
+    </section>
+    <div style="display:none;" id="page">
+        <!------------NAVIGATION------------>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#slider-area"><img src="css/img/icons/logo.svg" alt="Logo TRIA"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#slider-area">As Cervejas</a></li>
+                        <li><a href="#overview">Sazonais</a></li>
+                        <li><a href="#process">O Processo </a></li>
+                        <li><a href="#about">A Cervejaria</a></li>
+                        <li><a href="#location">Onde Beber</a></li>
+                        <li><a href="#socialwall">TRIA Social</a></li>
                     </ul>
                 </div>
-            </nav>
-            <!------------SLIDER-AREA------------>
-            <section id="slider-area" class="full">
-                <div id="slider" class="carousel slide full" data-ride="carousel" data-interval="false">
-                    <ol class="carousel-indicators">
-                        <li data-target="#slider" data-slide-to="0" class="active"></li>
-                        <li data-target="#slider" data-slide-to="1"></li>
-                        <li data-target="#slider" data-slide-to="2"></li>
-                        <li data-target="#slider" data-slide-to="3"></li>
-                        <li data-target="#slider" data-slide-to="4"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <!--ITEM-->
-                        <div class="item active green">
-                            <div class="content-area">
-                                <div class="container">
-                                    <h2>Conheça Nossas Cervejas</h2>
-                                    <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas"/></h3>
-                                    <div class="img-area">
-                                        <img src="css/img/slides/002.png" alt="">
-                                    </div>
-                                    <div class="text-area">
-                                        <h3>Iracema</h3>
-                                        <p>Forte e intensa como o romance homônimo de José de Alencar, a TRIA Iracema é uma India Pale Ale com alto amargor e aroma intenso com caráter cítrico, floral e frutado.
-                                        </p>
-                                        <div class="info">
-                                            <div class="info-alc">Teor Alc.<br/><span>6,0%</span></div>
-                                            <div class="info-ibu">Ibu<br/><span>70</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
+                <ul id="social-media">
+                    <li><a href="http://instagram.com/cervejariatria" target="_blank"><img
+                                src="css/img/icons/instagram.svg" alt="Instragram" /></a></li>
+                    <li><a href="https://www.facebook.com/cervejariatria"><img src="css/img/icons/facebook.svg"
+                                alt="Facebook" /></a></li>
+                    <li><a href="http://twitter.com/cervejariatria/" target="_blank"><img
+                                src="css/img/icons/twitter.svg" alt="Twitter" /></a></li>
+                </ul>
+            </div>
+        </nav>
+        <!------COVID_19 SECTION--------->
+        <section id="overview" class="full">
+            <div class="content-area covid">
+                <h1 class="update-msg">DELIVERY DURANTE A QUARENTENA</h1>
+                <div class="spacer"></div>
+                <div class="msg">
+                    <p>
+                        Continuamos operando durante a quarentena a semana inteira com o serviço de delivery para toda a região de Moema
+                        e proximidades.
+                    </p>
+                    <p>
+                        Entregamos chopp TRIA direto da fábrica para a sua casa! Confira nosso menu e preços abaixo, clicando em "Faça seu pedido". 
+                    </p>
+                </div>
+                <h2 class="shopnow">
+                    <a href="https://www.goomer.app/cervejaria-tria/menu">FAÇA SEU PEDIDO</a>
+                </h2>
 
-                                    </div>
-                                    <div class="clearfix"></div>
+            </div>
+        </section>
+        <!------------SLIDER-AREA------------>
+        <section id="slider-area" class="full">
+            <div id="slider" class="carousel slide full" data-ride="carousel" data-interval="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#slider" data-slide-to="1"></li>
+                    <li data-target="#slider" data-slide-to="2"></li>
+                    <li data-target="#slider" data-slide-to="3"></li>
+                    <li data-target="#slider" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <!--ITEM-->
+                    <div class="item active green">
+                        <div class="content-area">
+                            <div class="container">
+                                <h2>Conheça Nossas Cervejas</h2>
+                                <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas" /></h3>
+                                <div class="img-area">
+                                    <img src="css/img/slides/002.png" alt="">
                                 </div>
-                            </div>
-                        </div>                        
-                        <!--ITEM-->
-                        <div class="item yellow">
-                            <div class="content-area">
-                                <div class="container">
-                                    <h2>Conheça Nossas Cervejas</h2>
-                                    <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas"/></h3>
-                                    <div class="img-area">
-                                        <img src="css/img/slides/004.png" alt="">
+                                <div class="text-area">
+                                    <h3>Iracema</h3>
+                                    <p>Forte e intensa como o romance homônimo de José de Alencar, a TRIA Iracema é uma
+                                        India Pale Ale com alto amargor e aroma intenso com caráter cítrico, floral e
+                                        frutado.
+                                    </p>
+                                    <div class="info">
+                                        <div class="info-alc">Teor Alc.<br /><span>6,0%</span></div>
+                                        <div class="info-ibu">Ibu<br /><span>70</span></div>
+                                        <div class="clearfix"></div>
                                     </div>
-                                    <div class="text-area">
-                                        <h3>Sem Destino</h3>
-                                        <p>Leve e gostosa como a sensação de deixar os problemas do dia a dia para trás e embarcar em uma longa viagem rumo ao desconhecido.</p>
-                                        <div class="info">
-                                            <div class="info-alc">Teor Alc.<br/><span>5,0%</span></div>
-                                            <div class="info-ibu">Ibu<br/><span>20</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
+
                                 </div>
-                            </div>
-                        </div>   
-                                           
-                        <!--ITEM-->
-                        <div class="item orange">
-                            <div class="content-area">
-                                <div class="container">
-                                    <h2>Conheça Nossas Cervejas</h2>
-                                    <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas"/></h3>
-                                    <div class="img-area">
-                                        <img id="normal-height" src="css/img/slides/001.png" alt="">
-                                    </div>
-                                    <div class="text-area">
-                                        <h3>Baru</h3>
-                                        <p>Da mesma parceria que nos deu o futebol (e títulos de campeões no Mundial de Clubes) surgiu a TRIA Baru, uma tradicional Brown Ale inglesa com o toque brasileiro da castanha de baru.
-                                        </p>
-                                        <div class="info">
-                                            <div class="info-alc">Teor Alc.<br/><span>5,0%</span></div>
-                                            <div class="info-ibu">Ibu<br/><span>20</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>                     
-                        <!--ITEM-->
-                        <div class="item white">
-                            <div class="content-area">
-                                <div class="container">
-                                    <h2>Conheça Nossas Cervejas</h2>
-                                    <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas"/></h3>
-                                    <div class="img-area">
-                                        <img id="weizen" src="css/img/slides/005.png" alt="">
-                                    </div>
-                                    <div class="text-area">
-                                        <h3>Tropical Wit</h3>
-                                        <p>A Tropical Wit é uma witbier com casca de laranja e limão, coentro, pimenta rosa, capim santo e camomila. Leve e refrescante, é uma especialidade de verão produzida o ano todo.
-                                        </p>
-                                        <div class="info">
-                                            <div class="info-alc">Teor Alc.<br/><span>5,0%</span></div>
-                                            <div class="info-ibu">Ibu<br/><span>19</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
+                                <div class="clearfix"></div>
                             </div>
                         </div>
-                        <!--ITEM-->
-                        <div class="item blue">
-                            <div class="content-area">
-                                <div class="container">
-                                    <h2>Conheça Nossas Cervejas</h2>
-                                    <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas"/></h3>
-                                    <div class="img-area">
-                                        <img src="css/img/slides/003.png" alt="">
+                    </div>
+                    <!--ITEM-->
+                    <div class="item yellow">
+                        <div class="content-area">
+                            <div class="container">
+                                <h2>Conheça Nossas Cervejas</h2>
+                                <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas" /></h3>
+                                <div class="img-area">
+                                    <img src="css/img/slides/004.png" alt="">
+                                </div>
+                                <div class="text-area">
+                                    <h3>Sem Destino</h3>
+                                    <p>Leve e gostosa como a sensação de deixar os problemas do dia a dia para trás e
+                                        embarcar em uma longa viagem rumo ao desconhecido.</p>
+                                    <div class="info">
+                                        <div class="info-alc">Teor Alc.<br /><span>5,0%</span></div>
+                                        <div class="info-ibu">Ibu<br /><span>20</span></div>
+                                        <div class="clearfix"></div>
                                     </div>
-                                    <div class="text-area">
-                                        <h3>Porter</h3>
-                                        <p>A Porter é uma cerveja escura diferenciada por mesclar o melhor das escolas cervejeiras britânica e americana. Produzida com uma seleção especial de maltes e lúpulos, possui um sabor maltoso forte e complexo, com final apresentando um toque seco e torrado, um aroma florado e um alto amargor, acentuado pelos maltes torrados.
-                                        </p>
-                                        <div class="info">
-                                            <div class="info-alc">Teor Alc.<br/><span>4,5%</span></div>
-                                            <div class="info-ibu">Ibu<br/><span>53</span></div>
-                                            <div class="clearfix"></div>
-                                        </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--ITEM-->
+                    <div class="item orange">
+                        <div class="content-area">
+                            <div class="container">
+                                <h2>Conheça Nossas Cervejas</h2>
+                                <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas" /></h3>
+                                <div class="img-area">
+                                    <img id="normal-height" src="css/img/slides/001.png" alt="">
+                                </div>
+                                <div class="text-area">
+                                    <h3>Baru</h3>
+                                    <p>Da mesma parceria que nos deu o futebol (e títulos de campeões no Mundial de
+                                        Clubes) surgiu a TRIA Baru, uma tradicional Brown Ale inglesa com o toque
+                                        brasileiro da castanha de baru.
+                                    </p>
+                                    <div class="info">
+                                        <div class="info-alc">Teor Alc.<br /><span>5,0%</span></div>
+                                        <div class="info-ibu">Ibu<br /><span>20</span></div>
+                                        <div class="clearfix"></div>
                                     </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ITEM-->
+                    <div class="item white">
+                        <div class="content-area">
+                            <div class="container">
+                                <h2>Conheça Nossas Cervejas</h2>
+                                <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas" /></h3>
+                                <div class="img-area">
+                                    <img id="weizen" src="css/img/slides/005.png" alt="">
+                                </div>
+                                <div class="text-area">
+                                    <h3>Tropical Wit</h3>
+                                    <p>A Tropical Wit é uma witbier com casca de laranja e limão, coentro, pimenta
+                                        rosa, capim santo e camomila. Leve e refrescante, é uma especialidade de verão
+                                        produzida o ano todo.
+                                    </p>
+                                    <div class="info">
+                                        <div class="info-alc">Teor Alc.<br /><span>5,0%</span></div>
+                                        <div class="info-ibu">Ibu<br /><span>19</span></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ITEM-->
+                    <div class="item blue">
+                        <div class="content-area">
+                            <div class="container">
+                                <h2>Conheça Nossas Cervejas</h2>
+                                <h3><img src="css/img/headlines/ascervejas.png" alt="ascervejas" /></h3>
+                                <div class="img-area">
+                                    <img src="css/img/slides/003.png" alt="">
+                                </div>
+                                <div class="text-area">
+                                    <h3>Porter</h3>
+                                    <p>A Porter é uma cerveja escura diferenciada por mesclar o melhor das escolas
+                                        cervejeiras britânica e americana. Produzida com uma seleção especial de
+                                        maltes e lúpulos, possui um sabor maltoso forte e complexo, com final
+                                        apresentando um toque seco e torrado, um aroma florado e um alto amargor,
+                                        acentuado pelos maltes torrados.
+                                    </p>
+                                    <div class="info">
+                                        <div class="info-alc">Teor Alc.<br /><span>4,5%</span></div>
+                                        <div class="info-ibu">Ibu<br /><span>53</span></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--CONTROLS-->
+                <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
+                    <img src="css/img/icons/arrow_left.png">
+                </a>
+                <a class="right carousel-control" href="#slider" role="button" data-slide="next">
+                    <img src="css/img/icons/arrow_right.png">
+                </a>
+            </div>
+        </section>
+        <!------------OVERVIEW------------>
+        <section id="overview" class="full">
+            <div class="content-area">
+                <div class="container">
+                    <h2>Cervejas Que Já Fizemos</h2>
+                    <h3><img src="css/img/headlines/sazonais.png" alt="ascervejas" /></h3>
+                </div>
+                <div id="slider-overview" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner detail-area">
+                        <!--DETAIL-->
+
+
+                        <div class="item">
+                            <div class="detail-content">
+                                <!--<img src="css/img/icons/foradeestoque.svg" alt="fora">-->
+                                <h4>Pumpkin King</h4>
+                                <p>Cerveja com abóbora produzida todos os anos para o Dia das Bruxas. Com 7% de teor
+                                    alcóolico, é a cerveja mais alcóolica já produzida pela TRIA.
+                                </p>
+                                <div class="info">
+                                    <div class="info-alc">Teor Alc.<br /><span>7,0%</span></div>
+                                    <div class="info-ibu">Ibu<br /><span>21</span></div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!--CONTROLS-->
-                    <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
-                       <img src="css/img/icons/arrow_left.png">
+                    <a class="left carousel-control" href="#slider-overview" role="button" data-slide="prev">
+                        <img src="css/img/icons/arrow_left.png">
                     </a>
-                    <a class="right carousel-control" href="#slider" role="button" data-slide="next">
+                    <a class="right carousel-control" href="#slider-overview" role="button" data-slide="next">
                         <img src="css/img/icons/arrow_right.png">
                     </a>
                 </div>
-            </section>
-            <!------------OVERVIEW------------>
-            <section id="overview" class="full">
-                <div class="content-area">
-                    <div class="container">
-                        <h2>Cervejas Que Já Fizemos</h2>
-                        <h3><img src="css/img/headlines/sazonais.png" alt="ascervejas"/></h3>
-                    </div>
-                    <div id="slider-overview" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner detail-area">
-                            <!--DETAIL-->
-                            
-
-                            <div class="item">
-                                <div class="detail-content">
-                                    <!--<img src="css/img/icons/foradeestoque.svg" alt="fora">-->
-                                    <h4>Pumpkin Ale</h4>
-                                    <p>Cerveja com abóbora produzida todos os anos para o Dia das Bruxas. Com 7% de teor alcóolico, é a cerveja mais alcóolica já produzida pela TRIA. 
-                                    </p>
-                                    <div class="info">
-                                        <div class="info-alc">Teor Alc.<br/><span>7,0%</span></div>
-                                        <div class="info-ibu">Ibu<br/><span>21</span></div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--CONTROLS-->
-                        <a class="left carousel-control" href="#slider-overview" role="button" data-slide="prev">
-                            <img src="css/img/icons/arrow_left.png">
-                        </a>
-                        <a class="right carousel-control" href="#slider-overview" role="button" data-slide="next">
-                            <img src="css/img/icons/arrow_right.png">
-                        </a>
-                    </div>
-                    <div class="container">
-                        <!--SPACER-->
-                        <div class="spacer"></div>
-                        <!--MAIL-->
-                        <p class="mail">
-                            <span>Mantenha-se informado</span>
-                            Deixe seu e-mail e você será notificado sempre que produzirmos uma cerveja nova!
-                        </p>
-
-                        <form action="//mundocervejeiro.us7.list-manage.com/subscribe/post?u=b87d36809eefc412c18f90ba9&amp;id=d823a00bd3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
-                            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Seu endereço de e-mail" required>
-                            <input type="hidden" name="b_b87d36809eefc412c18f90ba9_d823a00bd3" tabindex="-1" value="">
-                            <button type="submit" name="subscribe"><img src="css/img/icons/arrow_submit.png" alt="submit"/></button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-            <!------------PROCESS------------>
-            <section id="process" class="full">
-                <div class="content-area">
-                    <div class="container">
-                        <h3><img src="css/img/headlines/artesan.png" alt="artesan"/></h3>
-                    </div>
-                    <div id="slider-process" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <div class="carousel-inner">
-                            <!--STEP-->
-                            <div class="item active">
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/1.gif" alt="Malteação"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/1.gif" alt="Malteação"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/1.gif" alt="Malteação"/>
-                                    <h3>Malteação</h3>
-                                    <p>Os grãos passam por uma germinação controlada e desenvolvem as enzimas necessárias à transformação do amido em açucar. A germinação é interrompida pela secagem, dando cor e aroma ao grão.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--STEP-->
-                            <div class="item">
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/2.gif" alt="Moagem"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/2.gif" alt="Moagem"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/2.gif" alt="Moagem"/>
-                                    <h3>Moagem</h3>
-                                    <p>Os grãos malteados e não-malteados selecionados para a receita são moídos juntos
-                                        na espessura certa com ajuda de um moedor motorizado.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--STEP-->
-                            <div class="item">
-                                <!--STEP-->
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/3.gif" alt="Brassagem, Clarificação, Fervura e Centrifugação"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/3.gif" alt="Brassagem, Clarificação, Fervura e Centrifugação"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/3.gif" alt="Brassagem, Clarificação, Fervura e Centrifugação"/>
-                                    <h3>Brassagem, Clarificação, Fervura e Centrifugação</h3>
-                                    <p>Os grãos são misturados com água quente e cozinhados, definindo corpo e conteúdo
-                                        alcoólico. Depois os grãos são removidos, sobrando apenas o mosto (líquido). O
-                                        mosto é fervido e lúpulo é adicionado. Por fim, o mosto é centrifugado, removendo
-                                        sedimentos indesejados.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--STEP-->
-                            <div class="item">
-                                <!--STEP-->
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/4.gif" alt="Resfriamento"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/4.gif" alt="Resfriamento"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/4.gif" alt="Resfriamento"/>
-                                    <h3>Resfriamento</h3>
-                                    <p>O mosto é resfriado rapidamente até a temperatura ideal de fermentação com ajuda
-                                        de um trocador de calor. A temperatura ideal varia de acordo com o estilo.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--STEP-->
-                            <div class="item">
-                                <!--STEP-->
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/5.gif" alt="Fermentação &amp; Maturação"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/5.gif" alt="Fermentação &amp; Maturação"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/5.gif" alt="Fermentação &amp; Maturação"/>
-                                    <h3>Fermentação &amp; Maturação</h3>
-                                    <p>O fermento atua no mosto transformando os açúcares em CO2 e álcool, criando o que
-                                        chamamos de chopp. Após a fermentação, o chopp permanece maturando por poucas
-                                        semanas, desenvolvendo seu aroma e sabor. Mais lúpulo pode ser adicionado entre
-                                        essas etapas.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--STEP-->
-                            <div class="item">
-                                <!--STEP-->
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/6.gif" alt="Envase"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/6.gif" alt="Envase"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/6.gif" alt="Envase"/>
-                                    <h3>Envase</h3>
-                                    <p>Os barris são higienizados e o chopp é envasado sob pressão. O chopp matura por
-                                        mais alguns dias dentro do barril antes deste ser acoplado à chopeira.
-                                    </p>
-                                </div>
-                            </div>
-                            <!--STEP-->
-                            <div class="item">
-                                <!--STEP-->
-                                <div class="step">
-                                    <img class="step-normal" src="css/img/steps/7.gif" alt="Distribuição"/>
-                                    <img class="step-smartphone" src="css/img/steps/mobile/7.gif" alt="Distribuição"/>
-                                    <img class="step-tablet" src="css/img/steps/tablet/7.gif" alt="Distribuição"/>
-                                    <h3>Distribuição</h3>
-                                    <p>Com o barril acoplado, o garçom tira o chopp de maneira precisa, observando o
-                                        equilíbrio perfeito entre líquido e espuma para cada estilo. Finalmente o chopp
-                                        está pronto para ser degustado. Agora é com você!
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!--CONTROLS-->
-                        <a class="left carousel-control" href="#slider-process" role="button" data-slide="prev">
-                            <img src="css/img/icons/arrow_left.png">
-                        </a>
-                        <a class="right carousel-control" href="#slider-process" role="button" data-slide="next">
-                            <img src="css/img/icons/arrow_right.png">
-                        </a>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </section>
-            <!------------ABOUT------------>
-            <section id="about">
-                <div class="content-area">
-                    <div class="container">
-                        <h2>Onde Nasce A TRIA</h2>
-                        <h3><img src="css/img/headlines/acervejaria.png" alt="A Cervejaria"/></h3>
-                        <p>A <strong>TRIA</strong> é uma cervejaria artesanal autenticamente paulistana, situada no bairro de Moema, São Paulo. 
-                        Fundada em 2012 pelo Mestre Cervejeiro Frank Skwirut e seu sócio Diego Frata, a <strong>TRIA</strong> se tornou uma das
-                        primeiras cervejarias artesanais na cidade, produzindo sua própria linha de cervejas e também atuando em produções terceirizadas
-                        para cervejeiros caseiros e entusiastas.
-                        </p>
-
-                        <p>Quer produzir sua cerveja em uma fábrica de verdade? <a class="scrollto" href="#socialwall">Entre em contato.</a></p>
-                    </div>
-                </div>
-            </section>
-            <!------------BREWERY-PARALLAX------------>
-            <section id="brewery"></section>
-            <!------------LOCATION------------>
-            <section id="location" class="full">
-                <div id="google-map"></div>
-                <div class="content-area">
-                    <div class="container">
-                        <h3><img src="css/img/headlines/ondebeber.png" alt="ondebeber"></h3>
-                    </div>
-                </div>
-                <img id="locator-icon" src="css/img/icons/locator.png" alt="Locator">
-                <div id="locator">
-                    <img src="css/img/icons/logo.svg" alt="Cervejaria TRIA">
-                    <p> Av. Miruna, 51 <br/>
-                        São Paulo, SP<br/>
-                        CEP: 04084-000<br/>
-                        <!-- (11) 2594-3156 <br/>-->
-                        (11) 99512-0441<br/>
-                        <span class="visible-xs">
-                            <br/>
-                            <a href="mailto:contato@cervejariatria.com.br">Email</a><br/>
-                        </span>
-                        <span class="hidden-xs">
-                            <a href="mailto:contato@cervejariatria.com.br">contato@cervejariatria.com.br</a><br/>
-                        </span>
-
-                        <br/>
-                        Segunda e Terça FECHADO<br/>
-                        Quarta e Quinta 17h – 23h<br/>
-                        Sexta e Sábabado 12h – 1h<br/>
-                        Doming FECHADO<br/>
+                <div class="container">
+                    <!--SPACER-->
+                    <div class="spacer"></div>
+                    <!--MAIL-->
+                    <p class="mail">
+                        <span>Mantenha-se informado</span>
+                        Deixe seu e-mail e você será notificado sempre que produzirmos uma cerveja nova!
                     </p>
-                    <div id="arrow"></div>
+
+                    <form
+                        action="//mundocervejeiro.us7.list-manage.com/subscribe/post?u=b87d36809eefc412c18f90ba9&amp;id=d823a00bd3"
+                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+                        <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Seu endereço de e-mail" required>
+                        <input type="hidden" name="b_b87d36809eefc412c18f90ba9_d823a00bd3" tabindex="-1" value="">
+                        <button type="submit" name="subscribe"><img src="css/img/icons/arrow_submit.png"
+                                alt="submit" /></button>
+                    </form>
                 </div>
-            </section>
-            <!------------SOCIAL------------>
-            <section id="socialwall" class="full">
-                <div class="content-area">
-                    <div class="container">
-                        <h2>Entre No Mundo Da TRIA</h2>
-                        <h3><img src="css/img/headlines/triasocial.png" alt="triasocial"/></h3>
-                        <ul>
-                            <li><a href="http://facebook.com/cervejariatria/" target="_blank">TRIA NO Facebook</a></li>
-                            <li><a href="http://twitter.com/cervejariatria/" target="_blank">TRIA NO Twitter</a></li>
-                            <li><a href="http://instagram.com/cervejariatria/" target="_blank">TRIA NO Instagram</a></li>
-                            <li><a href="http://plus.google.com/+CervejariatriaBrasil/" target="_blank">TRIA NO Google+</a></li>
-                            <li><a href="mailto:contato@cervejariatria.com.br">Email</a></li>
-                        </ul>
+            </div>
+        </section>
+        <!------------PROCESS------------>
+        <section id="process" class="full">
+            <div class="content-area">
+                <div class="container">
+                    <h3><img src="css/img/headlines/artesan.png" alt="artesan" /></h3>
+                </div>
+                <div id="slider-process" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <div class="carousel-inner">
+                        <!--STEP-->
+                        <div class="item active">
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/1.gif" alt="Malteação" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/1.gif" alt="Malteação" />
+                                <img class="step-tablet" src="css/img/steps/tablet/1.gif" alt="Malteação" />
+                                <h3>Malteação</h3>
+                                <p>Os grãos passam por uma germinação controlada e desenvolvem as enzimas necessárias à
+                                    transformação do amido em açucar. A germinação é interrompida pela secagem, dando
+                                    cor e aroma ao grão.
+                                </p>
+                            </div>
+                        </div>
+                        <!--STEP-->
+                        <div class="item">
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/2.gif" alt="Moagem" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/2.gif" alt="Moagem" />
+                                <img class="step-tablet" src="css/img/steps/tablet/2.gif" alt="Moagem" />
+                                <h3>Moagem</h3>
+                                <p>Os grãos malteados e não-malteados selecionados para a receita são moídos juntos
+                                    na espessura certa com ajuda de um moedor motorizado.
+                                </p>
+                            </div>
+                        </div>
+                        <!--STEP-->
+                        <div class="item">
+                            <!--STEP-->
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/3.gif"
+                                    alt="Brassagem, Clarificação, Fervura e Centrifugação" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/3.gif"
+                                    alt="Brassagem, Clarificação, Fervura e Centrifugação" />
+                                <img class="step-tablet" src="css/img/steps/tablet/3.gif"
+                                    alt="Brassagem, Clarificação, Fervura e Centrifugação" />
+                                <h3>Brassagem, Clarificação, Fervura e Centrifugação</h3>
+                                <p>Os grãos são misturados com água quente e cozinhados, definindo corpo e conteúdo
+                                    alcoólico. Depois os grãos são removidos, sobrando apenas o mosto (líquido). O
+                                    mosto é fervido e lúpulo é adicionado. Por fim, o mosto é centrifugado, removendo
+                                    sedimentos indesejados.
+                                </p>
+                            </div>
+                        </div>
+                        <!--STEP-->
+                        <div class="item">
+                            <!--STEP-->
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/4.gif" alt="Resfriamento" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/4.gif" alt="Resfriamento" />
+                                <img class="step-tablet" src="css/img/steps/tablet/4.gif" alt="Resfriamento" />
+                                <h3>Resfriamento</h3>
+                                <p>O mosto é resfriado rapidamente até a temperatura ideal de fermentação com ajuda
+                                    de um trocador de calor. A temperatura ideal varia de acordo com o estilo.
+                                </p>
+                            </div>
+                        </div>
+                        <!--STEP-->
+                        <div class="item">
+                            <!--STEP-->
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/5.gif" alt="Fermentação &amp; Maturação" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/5.gif"
+                                    alt="Fermentação &amp; Maturação" />
+                                <img class="step-tablet" src="css/img/steps/tablet/5.gif"
+                                    alt="Fermentação &amp; Maturação" />
+                                <h3>Fermentação &amp; Maturação</h3>
+                                <p>O fermento atua no mosto transformando os açúcares em CO2 e álcool, criando o que
+                                    chamamos de chopp. Após a fermentação, o chopp permanece maturando por poucas
+                                    semanas, desenvolvendo seu aroma e sabor. Mais lúpulo pode ser adicionado entre
+                                    essas etapas.
+                                </p>
+                            </div>
+                        </div>
+                        <!--STEP-->
+                        <div class="item">
+                            <!--STEP-->
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/6.gif" alt="Envase" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/6.gif" alt="Envase" />
+                                <img class="step-tablet" src="css/img/steps/tablet/6.gif" alt="Envase" />
+                                <h3>Envase</h3>
+                                <p>Os barris são higienizados e o chopp é envasado sob pressão. O chopp matura por
+                                    mais alguns dias dentro do barril antes deste ser acoplado à chopeira.
+                                </p>
+                            </div>
+                        </div>
+                        <!--STEP-->
+                        <div class="item">
+                            <!--STEP-->
+                            <div class="step">
+                                <img class="step-normal" src="css/img/steps/7.gif" alt="Distribuição" />
+                                <img class="step-smartphone" src="css/img/steps/mobile/7.gif" alt="Distribuição" />
+                                <img class="step-tablet" src="css/img/steps/tablet/7.gif" alt="Distribuição" />
+                                <h3>Distribuição</h3>
+                                <p>Com o barril acoplado, o garçom tira o chopp de maneira precisa, observando o
+                                    equilíbrio perfeito entre líquido e espuma para cada estilo. Finalmente o chopp
+                                    está pronto para ser degustado. Agora é com você!
+                                </p>
+                            </div>
+                        </div>
                     </div>
+                    <!--CONTROLS-->
+                    <a class="left carousel-control" href="#slider-process" role="button" data-slide="prev">
+                        <img src="css/img/icons/arrow_left.png">
+                    </a>
+                    <a class="right carousel-control" href="#slider-process" role="button" data-slide="next">
+                        <img src="css/img/icons/arrow_right.png">
+                    </a>
                 </div>
+                <div class="clearfix"></div>
+            </div>
+        </section>
+        <!------------ABOUT------------>
+        <section id="about">
+            <div class="content-area">
+                <div class="container">
+                    <h2>Onde Nasce A TRIA</h2>
+                    <h3><img src="css/img/headlines/acervejaria.png" alt="A Cervejaria" /></h3>
+                    <p>A <strong>TRIA</strong> é uma cervejaria artesanal autenticamente paulistana, situada no bairro
+                        de Moema, São Paulo.
+                        Fundada em 2012 pelo Mestre Cervejeiro Frank Skwirut e seu sócio Diego Frata, a
+                        <strong>TRIA</strong> se tornou uma das
+                        primeiras cervejarias artesanais na cidade, produzindo sua própria linha de cervejas e também
+                        atuando em produções terceirizadas
+                        para cervejeiros caseiros e entusiastas.
+                    </p>
 
-            </section>
-        </div>
+                    <p>Quer produzir sua cerveja em uma fábrica de verdade? <a class="scrollto" href="#socialwall">Entre
+                            em contato.</a></p>
+                </div>
+            </div>
+        </section>
+        <!------------BREWERY-PARALLAX------------>
+        <section id="brewery"></section>
+        <!------------LOCATION------------>
+        <section id="location" class="full">
+            <div id="google-map"></div>
+            <div class="content-area">
+                <div class="container">
+                    <h3><img src="css/img/headlines/ondebeber.png" alt="ondebeber"></h3>
+                </div>
+            </div>
+            <img id="locator-icon" src="css/img/icons/locator.png" alt="Locator">
+            <div id="locator">
+                <img src="css/img/icons/logo.svg" alt="Cervejaria TRIA">
+                <p> Av. Miruna, 51 <br />
+                    São Paulo, SP<br />
+                    CEP: 04084-000<br />
+                    <!-- (11) 2594-3156 <br/>-->
+                    (11) 99512-0441<br />
+                    <span class="visible-xs">
+                        <br />
+                        <a href="mailto:contato@cervejariatria.com.br">Email</a><br />
+                    </span>
+                    <span class="hidden-xs">
+                        <a href="mailto:contato@cervejariatria.com.br">contato@cervejariatria.com.br</a><br />
+                    </span>
 
-        <script src="js/appmin.js"></script>
+                    <br />
+                    Segunda e Terça FECHADO<br />
+                    Quarta e Quinta 17h – 23h<br />
+                    Sexta e Sábabado 12h – 1h<br />
+                    Doming FECHADO<br />
+                </p>
+                <div id="arrow"></div>
+            </div>
+        </section>
+        <!------------SOCIAL------------>
+        <section id="socialwall" class="full">
+            <div class="content-area">
+                <div class="container">
+                    <h2>Entre No Mundo Da TRIA</h2>
+                    <h3><img src="css/img/headlines/triasocial.png" alt="triasocial" /></h3>
+                    <ul>
+                        <li><a href="http://facebook.com/cervejariatria/" target="_blank">TRIA NO Facebook</a></li>
+                        <li><a href="http://twitter.com/cervejariatria/" target="_blank">TRIA NO Twitter</a></li>
+                        <li><a href="http://instagram.com/cervejariatria/" target="_blank">TRIA NO Instagram</a></li>
+                        <li><a href="http://plus.google.com/+CervejariatriaBrasil/" target="_blank">TRIA NO Google+</a>
+                        </li>
+                        <li><a href="mailto:contato@cervejariatria.com.br">Email</a></li>
+                    </ul>
+                </div>
+            </div>
 
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        </section>
+    </div>
 
-          ga('create', 'UA-41302257-2', 'auto');
-          ga('require', 'displayfeatures');
-          ga('send', 'pageview');
+    <script src="js/appmin.js"></script>
 
-        </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-41302257-2', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
 
 
-    </body>
+</body>
+
 </html>
