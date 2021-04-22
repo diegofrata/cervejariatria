@@ -95,7 +95,6 @@ http://www.gnu.org/licenses/gpl.html
 $( document ).ready(function() {
 
     scrollTo();
-    resize_bg();
     carouselSwipe();
 
     $(window).on('resize', function () {
@@ -104,9 +103,8 @@ $( document ).ready(function() {
 
     $('#brewery').parallax("50%", 0.1);
     setTimeout( function(){
-        $('#start').css({'background-position': 'center top'});
-        $('#age-confirm').css({'bottom': 0});
-    },2500);
+        resize_bg();
+    },500);
 
 
 });
