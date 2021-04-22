@@ -28,69 +28,14 @@
 <script type="text/javascript">
     $(window).load(function () {
         var doc_height = window.innerHeight ? window.innerHeight : $(window).height();
-        $('#status').delay(2500).fadeOut('slow');
-        $('#preloader').delay(2500).fadeOut('slow');
-        $('nav').css('display', 'none');
-        setTimeout(function () {
-            $('#age-confirm').css({
-                'visibility': 'visible'
-            });
-        }, 2000);
-
-
         $('body').css({
             'height': doc_height
         });
-
-
-        $(document).on('click', '#showsite', function () {
-            if ($('#page').css('display', 'none')) {
-                navAction();
-                $('#page').fadeIn(1, function () {
-                    resize_bg();
-                    initialize();
-
-                    var $nav = $('.navbar');
-                    $('html, body').animate({
-                        scrollTop: $('#page').offset().top - $nav.height() + 1
-                    }, 1400);
-
-                });
-            } else {
-                var $nav = $('.navbar');
-                $('html, body').animate({
-                    scrollTop: $('#page').offset().top - $nav.height() + 1
-                }, 1400);
-            }
-
-        });
-
     });
 </script>
 
 <body>
-    <!----PRELOADER----->
-    <div id="preloader" class="full">
-        <div id="status"></div>
-    </div>
-    <!------------START------------>
-    <section id="start" class="full">
-        <div id="age-confirm" class="full">
-            <div id="beer-area">
-                <img class="hidden-xs" src="css/img/bg/beer.png" alt="">
-                <img class="visible-xs" id="wood" src="css/img/bg/mobile/wood.jpg" alt="">
-                <img class="visible-xs" id="beer" src="css/img/bg/mobile/beer.png" alt="">
-                <img class="visible-xs" id="coaster" src="css/img/bg/mobile/coaster.png" alt="">
-                <div id="confirm-area">
-                    <p><img class="eighteen" src="css/img/18anos.svg" /></p>
-                    <a onclick="javascript:void(0)" id="showsite"><img class="sim" src="css/img/sim.svg" /></a>
-                    <a href="#" id="tooyoung"><img class="nao" src="css/img/nao.svg" /></a>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div style="display:none;" id="page">
+    <div id="page">
         <!------------NAVIGATION------------>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
@@ -109,7 +54,7 @@
                         <li><a href="#overview">Sazonais</a></li>
                         <li><a href="#process">O Processo </a></li>
                         <li><a href="#about">A Cervejaria</a></li>
-                        <li><a href="#location">Onde Beber</a></li>
+                        <!-- <li><a href="#location">Onde Beber</a></li> -->
                         <li><a href="#socialwall">TRIA Social</a></li>
                     </ul>
                 </div>
@@ -123,58 +68,8 @@
                 </ul>
             </div>
         </nav>
-        <!------COVID_19 SECTION--------->
-        <section id="covid" class="full">
-            <div class="content-area covid">
-                <h1 class="update-msg">FUNCIONAMENTO DURANTE O DISTANCIAMENTO SOCIAL</h1>
-                <div class="spacer"></div>
-                <div class="msg">
-                    <p>
-                        Abriremos para atendimento no local de Quarta à Sábado das 17:00 às 22:00.  Nos demais dias da semana vamos 
-                        continuar atendendo delivery. 
-                    </p>
-                </div>
+        <section class="top-padding">
 
-                <div>
-
-                    <div class="msg">
-                        <h3>Delivery</h3>
-
-                        <p>
-                            Entregamos chopp TRIA direto da fábrica para a sua casa! Confira nosso cardápio nossa seleção completa de chopps,
-                            assim como nosso petiscos, grelhados e outros pratos para acompanhar seu chopp.
-                        </p>
-
-                        <h2 class="shopnow">
-                            <a href="https://www.goomer.app/cervejaria-tria/menu">VER MENU</a>
-                        </h2>
-                    </div>
-                    <div class="msg">
-                        <h3>Atendimento no Local</h3>
-
-                        <p>
-                            Para garantir sua experiência recomendamos que faça sua reserva. Estamos trabalhando com capacidade reduzida à 
-                            40% e somente com clientes sentados à mesa.</p>
-                            
-                        <p> 
-                            Faremos a medição de temperatura na sua chegada e ofereceremos álcool gel, 
-                            que também estará disponível em todas as mesas. Nossas mesas respeitam o distanciamento mínimo de 2m entre elas 
-                            e são higienizadas com álcool 70% antes e após a chegada e saída de cada cliente.
-                        </p>
-
-                        <p>
-                            Faça sua reserva abaixo!<br>
-                        </p>
-
-                        <div style="text-align: center; margin: 10px 0px; margin-left: -10%;">
-                            <iframe src= "https://module.lafourchette.com/pt_BR/module/618601-c99d2" width="400" marginwidth="0" height="652" marginheight="0" scrolling="Yes" frameborder="0">
-
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
         </section>
         <!------------SLIDER-AREA------------>
         <section id="slider-area" class="full">
@@ -505,16 +400,14 @@
                 <div class="container">
                     <h2>Onde Nasce A TRIA</h2>
                     <h3><img src="css/img/headlines/acervejaria.png" alt="A Cervejaria" /></h3>
-                    <p>A <strong>TRIA</strong> é uma cervejaria artesanal autenticamente paulistana, situada no bairro
-                        de Moema, São Paulo.
-                        Fundada em 2012 pelo Mestre Cervejeiro Frank Skwirut e seu sócio Diego Frata, a
-                        <strong>TRIA</strong> se tornou uma das
-                        primeiras cervejarias artesanais na cidade, produzindo sua própria linha de cervejas e também
-                        atuando em produções terceirizadas
-                        para cervejeiros caseiros e entusiastas.
+                    <p>A <strong>TRIA</strong> é uma cervejaria artesanal, com sede em Santo André.
+                        Fundada em 2012 por Frank Skwirut e Diego Frata, originalmente no bairro de Moema 
+                        em São Paulo, a <strong>TRIA</strong> se tornou uma das primeiras cervejarias artesanais 
+                        na cidade, produzindo sua própria linha de cervejas e também atuando em produções terceirizadas
+                        para cervejarias ciganas e entusiastas.
                     </p>
 
-                    <p>Quer produzir sua cerveja em uma fábrica de verdade? <a class="scrollto" href="#socialwall">Entre
+                    <p>Quer produzir sua cerveja conosco? <br><a class="scrollto" href="#socialwall">Entre
                             em contato.</a></p>
                 </div>
             </div>
@@ -522,7 +415,7 @@
         <!------------BREWERY-PARALLAX------------>
         <section id="brewery"></section>
         <!------------LOCATION------------>
-        <section id="location" class="full">
+        <!-- <section id="location" class="full">
             <div id="google-map"></div>
             <div class="content-area">
                 <div class="container">
@@ -535,7 +428,7 @@
                 <p> Av. Miruna, 51 <br />
                     São Paulo, SP<br />
                     CEP: 04084-000<br />
-                    <!-- (11) 2594-3156 <br/>-->
+
                     (11) 99512-0441<br />
                     <span class="visible-xs">
                         <br />
@@ -552,7 +445,7 @@
                 </p>
                 <div id="arrow"></div>
             </div>
-        </section>
+        </section> -->
         <!------------SOCIAL------------>
         <section id="socialwall" class="full">
             <div class="content-area">
@@ -563,7 +456,6 @@
                         <li><a href="http://facebook.com/cervejariatria/" target="_blank">TRIA NO Facebook</a></li>
                         <li><a href="http://twitter.com/cervejariatria/" target="_blank">TRIA NO Twitter</a></li>
                         <li><a href="http://instagram.com/cervejariatria/" target="_blank">TRIA NO Instagram</a></li>
-                        <li><a href="http://plus.google.com/+CervejariatriaBrasil/" target="_blank">TRIA NO Google+</a>
                         </li>
                         <li><a href="mailto:contato@cervejariatria.com.br">Email</a></li>
                     </ul>
