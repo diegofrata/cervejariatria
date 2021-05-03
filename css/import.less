@@ -8690,3 +8690,245 @@ section {
      font-size: 1.2rem;
  }
 }
+
+
+
+#slider .item {
+    background-size: 100% auto !important;
+    background-position: top !important;
+    background-repeat: no-repeat !important;
+}
+
+#slider .item.iracema{
+    background-color: #a0c072 !important;
+}
+#slider .item.sem-destino{
+    background-color: #ffcd27 !important;
+}
+#slider .item.miruna{
+    background-color: #ffcd27 !important;
+}
+#slider .item.baru{
+    background-color: #c3b59e !important;
+}
+#slider .item.tropical-wit{
+    background-color: #96935e !important;
+}
+#slider .item.sp466{
+    background-color: #ffcd27 !important;
+}
+
+#slider .container {
+    display: flex;
+    flex-direction: column;
+}
+
+#slider .details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#slider .details-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#slider .side-can  {
+    padding-left: 20px;
+    justify-self: flex-end;
+    img {
+        height: calc(100vh - 280px);   
+    }
+}
+#slider .can {
+    display: none;
+}
+#slider .logo {
+    align-self: center;
+    padding: 5vh 0px;    
+}
+#slider .iracema .logo {
+    img {
+        height: 20vh;
+        width: auto;
+    }
+}
+#slider .sem-destino .logo {
+    img {
+        height: 25vh;
+        width: auto;
+    }
+}
+#slider .baru .logo {
+    overflow: hidden;
+    img {
+        height: 35vh;
+        width: auto;
+        margin-top: -12.7vh;
+    }
+}
+
+#slider .miruna .logo {
+    overflow: hidden;
+    img {
+        height: 35vh;
+        width: auto;
+        margin-top: -15vh;
+        margin-bottom: -11.5vh;
+    }
+}
+
+#slider .tropical-wit .logo {
+    overflow: hidden;
+    img {
+        height: 35vh;
+        width: auto;
+        margin-top: -10vh;
+        // margin-bottom: -11.5vh;
+    }
+}
+
+
+#slider .sp466 .logo {
+    overflow: hidden;
+    height: 35vh;
+}
+
+
+#slider .description {
+    font-family: Bitter;
+    align-self: flex-end;
+    font-size: 1.3em;
+    padding-bottom: 1.2em;
+}
+#slider .package {
+    white-space: nowrap;    
+    img {
+        width: 50%;
+        max-width: 300px;
+        padding: 0 2%;
+    }
+    padding-bottom: 16px;
+}
+
+#slider .shop {
+    button {
+        border: rgb(60, 35, 32) 2px solid;
+        background-color: rgba(255, 255, 255, .8);
+    }
+    padding-bottom: 16px;
+}
+
+.shop-link {
+    color: orangered !important;
+}
+
+@media (max-width: 768px) {
+
+    #slider .description {
+        font-size: 1.1em;
+        padding-bottom: 1em;
+    }
+
+    #slider .package {
+        img {
+            width: 50%;
+        }
+    }
+
+    #slider .logo {
+        img {
+            height: 14vh;
+        }
+    }
+
+    #slider .side-can  {
+        justify-self: flex-end;
+        img {
+            height: calc(70vh - 280px);   
+        }
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    #slider .description {
+        font-size: 1em;
+    }
+
+    #slider .logo {
+        padding: 2vh 0px;
+        img {
+            max-height: 12vh;
+        }
+    }
+
+    #slider .baru .logo img {
+        // height: 100vh;
+        max-height: 20vh;
+    }
+
+    #slider .miruna .logo img {
+        // height: 100vh;
+        max-height: 20vh;
+        margin-top: -7.5vh;
+        margin-bottom: -5.7vh;
+    }
+
+    #slider .tropical-wit .logo img {
+        // height: 100vh;
+        max-height: 20vh;
+        margin-top: -5.5vh;
+    }
+
+    #slider .side-can  {
+        display: none;
+    }
+
+    #slider .can {
+        padding: 2vh 0px;
+        display: flex;
+        margin: auto;
+        img {
+            height: 50vh;
+            width: auto;
+        }
+    }
+}
+
+@media (max-aspect-ratio: 1/1) {
+
+    #slider .package {
+        img {
+            width: 50%;
+        }
+    }
+
+    #slider .logo {
+        img {
+            width: 60vw;
+            height: auto;
+        }
+    }
+
+    #slider .baru .logo {
+        img {
+            margin-top: -6vh;
+        }
+    }
+
+
+
+    // #slider .item, #slider, #slider-area {
+    //     min-height: 0!important;
+    // }
+
+    #slider .side-can  {
+        justify-self: flex-end;
+        img {
+            width: calc(20vw);   
+            height: unset;
+        }
+    }
+}
