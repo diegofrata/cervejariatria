@@ -8770,6 +8770,7 @@ section {
 
 #slider .miruna .logo {
     overflow: hidden;
+    margin: 40px 0;
     img {
         height: 35vh;
         width: auto;
@@ -8851,7 +8852,7 @@ section {
 }
 
 
-@media (max-width: 420px) {
+@media (max-width: 425px) {
 
     #slider .description {
         font-size: 1em;
@@ -8923,17 +8924,24 @@ section {
         }
     }
 
-
-
-    // #slider .item, #slider, #slider-area {
-    //     min-height: 0!important;
-    // }
-
     #slider .side-can  {
         justify-self: flex-end;
         img {
             width: calc(20vw);   
             height: unset;
         }
+    }
+}
+
+@media (min-aspect-ratio: 16/10) {
+    #slider .item {
+        background-position: 0px -25vh !important;
+    }
+}
+
+
+@media (min-aspect-ratio: 20/10) {
+    #slider .item {
+        background-position: 0px -50vh !important;
     }
 }
